@@ -1,0 +1,16 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+    <main tabindex="0" role="main" class="main" id="maincontent">
+        <div class="orderFormContainer">
+            <div class="recept">
+                <h1>Kvittering</h1>
+                <p>Betalings id: <%= payment.id %></p>
+                <p>Email sendt til: <%= payer.email %></p>
+                <p>Navn: <%= payer.first_name %> <%= payer.last_name %></p>
+                <p>Betalt: <%= trans.total %><%= trans.currency %></p>
+                <p>Beskrivelse: <%= descrip.description %></p>
+            </div>
+        </div>
+    </main>
+<% include partials/footer.ejs %>
+<% include partials/after-footer.ejs %>

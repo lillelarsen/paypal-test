@@ -1,0 +1,42 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+    <main tabindex="0" role="main" class="main" id="maincontent">
+        <div class="orderFormContainer">
+            <h3>Bestil billetter</h3>
+            <div id="info">
+                <p>Indtast din mail og dit telefonnummer for at bestille de <span class="numbers">2</span> valgte billetter til <span class="eventName"></span></p>
+                <p>Samlet pris: <span class="fullPrice"></span></p>
+            </div>
+            <form action="/bestilling" class="singleItemOrder" method="POST">
+            <label for="email">Din email</label>
+                <input type="hidden" name="event">
+                <input type="hidden" name="tickets">
+                <input type="hidden" name="price">
+                <input type="email" id="email" name="email" placeholder="email" class="inputFrontend">
+                <label for="phone">Dit telefonnummer</label>
+                <input type="text" id="phone" name="phone" placeholder="Telefon" class="inputFrontend">
+                <div class="accepts">
+                    <input type="checkbox" name="conditions" id="acceptCon">
+                    <label for="acceptCon">Jeg accepterer Eventas almindelige <a class="acceptLink" href="/betingelser">betingelser</a></label>
+                </div>
+                <div class="accepts">
+                    <input type="checkbox" name="conditions" id="acceptData">
+                    <label for="acceptData">Jeg accepterer Eventas håndtering af <a class="acceptLink" href="/persondata">persondata</a></label>
+                </div>
+                <button type="submit" class="buttonFrontendSearch">Betal Via PayPal</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const info = document.querySelector('#info')
+        const form = document.querySelector('.singleItemOrder');
+        const url = new URLSearchParams(window.location.search);
+        info.querySelector('.eventName').innerHTML = url.get('event');
+        info.querySelector('.numbers').innerHTML = url.get('antal');
+        info.querySelector('.fullPrice').innerHTML = url.get('pris');
+        form.querySelector('input[name=event]').value = url.get('event');
+        form.querySelector('input[name=tickets]').value = url.get('antal');
+        form.querySelector('input[name=price]').value = url.get('pris');
+    </script>
+<% include partials/footer.ejs %>
+<% include partials/after-footer.ejs %>

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body {
+    font-family: 'Comfortaa', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FDF0D5;
+    height: 100vh;
+}
+
+.orderFormContainer{
+    width: 80vw;
+    min-height: 70vh;
+    background-color: #C6D8D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    width: 100vw;
+    min-height: 19vh;
+    background-color: #D81E5B;
+    display: flex;
+    align-items: center;
+}
+.footer {
+    width: 100vw;
+    min-height: 11vh;
+    background-color: #3A3335;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.siteName {
+    font-size: 4em;
+    display: inline-block;
+    width: 100vw;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.singleItemOrder {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+.eventDisplay {
+    text-align: center;
+    width: 300px;
+}
+.eventImg {
+    width: 150px;
+    height: auto;
+}
+.events {
+    display: flex;
+    margin-bottom: 1em;
+}
+.selectTickets {
+    background-color: #FDF0D5;
+    padding: 2em 1em;
+    margin-bottom: 1em;
+}
+.buttonFrontendSearch {
+    max-width: 10em;
+    background-color: #D81E5B;
+    padding: 1em 2em;
+    margin-left: auto;
+}
+.accepts {
+    margin-bottom: 1em;
+    padding: 1em 2em;
+    background-color: #FDF0D5;
+}
+.acceptLink {
+    color: #D81E5B;
+}
+.recept {
+    background-color: #D81E5B;
+    padding: 1em 2em;
+}
+.companyInfo {
+    color: #FDF0D5;
+    font-size: 13px;
+}
+.conditions a{
+    color: #FDF0D5;
+    font-size: 13px;
+    padding: 0.2em;
+}
+.ticketPrice {
+    display: inline-block;
+}
+#info {
+    background-color: #D81E5B;
+    padding: 1em 2em;
+    margin-bottom: 1em;
+}
+#phone {
+    margin-bottom: 1em;
+}
+h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+input {
+    padding: 0.5em 1em;
+    font-family: 'Comfortaa', cursive;
+}
+input[type=radio] {
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=radio] + label img{
+    border: #D81E5B solid 2px;
+    padding: 1em;
+}
+
+input[type=radio]:checked + label img{
+    padding: 0;
+}
+
+input[type=radio]:checked + label{
+    color: #D81E5B;
+    box-shadow: #3A3335;
+}
+
+.conditionsText {
+    text-align: left;
+}

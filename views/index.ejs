@@ -1,0 +1,50 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+    <main tabindex="0" role="main" class="main" id="maincontent"></main>
+        <div class="orderFormContainer">
+            <h3>Vælg event</h3>
+            <form action="/bestilling" class="singleItemOrder">
+                <div class="events">
+                    <div class="eventDisplay">
+                        <input type="radio" id="huey" name="event" value="Outdoor Movie Night" data-price="100" checked>
+                        <label for="huey">Outdoor Movie Night<img class="eventImg" src="/img/event_ver1.jpg" alt=""><span class="ticketPrice">Billetpris: 100DKK</span></label>
+                    </div>
+                        
+                    <div class="eventDisplay">
+                        <input type="radio" id="dewey" name="event" value="Sensommer Film Festival" data-price="200">
+                        <label for="dewey">Sensommer Film Festival<img class="eventImg" src="/img/event_ver2.jpg" alt=""><span class="ticketPrice">Billetpris: 200DKK</span></label>
+                    </div>
+                        
+                    <div class="eventDisplay">
+                        <input type="radio" id="louie" name="event" value="Øko folkefest" data-price="300">
+                        <label for="louie">Øko folkefest<img class="eventImg" src="/img/event_ver3.jpg" alt=""><span class="ticketPrice">Billetpris: 300DKK</span></label>
+                    </div>
+                </div>
+                <div class="selectTickets">
+                <label for="quantity">Antal billetter</label>
+                    <select name="antal" id="quantity" class="inputFrontend">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit" class="buttonFrontendSearch orderButton">Bestil</button>
+            </form>
+        </div>
+    </main>
+        <script>
+            const ticketForm = document.querySelector('.singleItemOrder');
+        
+            ticketForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const eventName = ticketForm.event.value;
+                const priceTag = document.querySelector('input[name=event]:checked').dataset.price;
+                const tickets = ticketForm.querySelector('select').value;
+                const price = priceTag*tickets;
+                window.location.href = `/bestilling?event=${eventName}&antal=${tickets}&pris=${price}`
+            })
+        </script>
+<% include partials/footer.ejs %>
+<% include partials/after-footer.ejs %>
