@@ -5,8 +5,8 @@ const formidable = require('express-formidable');
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
-    'client_id': 'Af7Wp5srpIcu9nSoQd869s_OzWDoltOK_G1M78TWrKtyOl22sGH2JkaGoY-p6qoHEkKQ3e4uaY-BW7oh',
-    'client_secret': 'EEPp6JtgPw-xGkKRs1cySaJfplPvK6q5NMw07eYqsPMkWxsL9RJGjG1-JYrbEw6dpZvnKmQNJNO4Ylyl'
+    'client_id': 'ENTER_CLIENT',
+    'client_secret': 'ENTER_SECRET'
   });
 
 app.set('views', 'views');           // In which directory are views located
